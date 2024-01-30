@@ -4,7 +4,7 @@ import { nunito_sans } from "./ui/fonts";
 import MoonOutline from '@/public/moon-outline.svg'
 import Image from "next/image";
 import { Providers } from "./providers";
-import ToggleTheme from "./ui/ToggleTheme";
+import ToggleTheme from "./ui/toggleTheme";
 
 export const metadata: Metadata = {
   title: "Rest Countries",
