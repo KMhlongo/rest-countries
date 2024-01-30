@@ -6,7 +6,7 @@ export type country = {
     population: number;
     subregion?: string;
     languages?: any;
-    currencies?: any;
+    currencies?: Currencies;
     borders?: string[];
     tld?: string[];
 }
@@ -24,6 +24,13 @@ export type NativeName = {
 export type Cat = {
     official: string;
     common: string;
+}
+export type Currencies = {
+    [key: string]: Currency;
+}
+export type Currency = {
+    name: string;
+    symbol: symbol;
 }
 export type Flags = {
     png: string;

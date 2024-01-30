@@ -6,8 +6,15 @@ import { Suspense } from "react";
 
 export default async function CountryInfo({name} : {name: string}) {
     const country = await fetchCountryInfo(name).then((data) => {return data[0]});
-    const languages = Object.values(country.languages)
-    const currencies = Object.values(country.currencies).map((curr) => {return curr.name})
+    const languages: string[] = Object.values(country.languages)
+    const currencies: string[] = [];
+    if (country.currencies) {
+        Object.entries(country.currencies).forEach(([code, cur]) => {
+            const {name} = cur;
+            currencies.push(name)
+        })
+    }
+    
 
     return(
         <div className="flex pt-8 flex-col sm:flex-row">
